@@ -10,19 +10,20 @@ Detect objects continuously through a camera, display them in a window with boun
 
 ⚙️ 1️⃣ Prerequisites
 
-Before starting:
+- Before starting:
 
-You’re booted into Linux Mint Cinnamon.
+- You’re booted into Linux Mint Cinnamon.
 
-You have an internet connection.
+- You have an internet connection.
 
-You have a USB webcam connected and working.
+- You have a USB webcam connected and working.
 
 
 You can verify your webcam:
 
+```
 ls /dev/video*
-
+```
 If you see /dev/video0, it’s connected correctly. ✅
 
 
@@ -30,31 +31,35 @@ If you see /dev/video0, it’s connected correctly. ✅
 
 ⚙️ 2️⃣ Update system
 
+```
 sudo apt update && sudo apt upgrade -y
-
+```
 
 ---
 
 ⚙️ 3️⃣ Install required packages
 
+```
 sudo apt install python3-pip git python3-opencv espeak -y
-
+```
 
 ---
 
 ⚙️ 4️⃣ Install Python libraries
 
+```
 pip3 install torch torchvision torchaudio ultralytics pyttsx3 --break-system-packages
+```
 
 📦 Explanation:
 
-torch, torchvision, torchaudio → Machine learning backend for YOLO
+- torch, torchvision, torchaudio → Machine learning backend for YOLO
 
-ultralytics → YOLOv8 library (latest version)
+- ultralytics → YOLOv8 library (latest version)
 
-pyttsx3 → Text-to-Speech
+- pyttsx3 → Text-to-Speech
 
-opencv-python → Already installed from step 3
+- opencv-python → Already installed from step 3
 
 
 
@@ -64,6 +69,7 @@ opencv-python → Already installed from step 3
 
 Run this simple command to ensure your camera is recognized:
 
+```
 python3 - <<'EOF'
 import cv2
 cap = cv2.VideoCapture(0)
@@ -73,6 +79,7 @@ else:
     print("✅ Camera working fine!")
 cap.release()
 EOF
+```
 
 If you get ✅ Camera working fine!, you’re ready.
 
@@ -90,7 +97,9 @@ We’ll use the YOLOv8 nano model (yolov8n.pt) — it’s lightweight but powerf
 
 Create a file named detect_and_speak.py:
 
+```
 nano detect_and_speak.py
+```
 
 Paste this complete code 👇
 
