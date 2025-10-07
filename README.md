@@ -98,7 +98,7 @@ Paste this complete code 👇
 ---
 
 🐍 Full Python Code: detect_and_speak.py
-
+```
 import cv2
 import pyttsx3
 from ultralytics import YOLO
@@ -159,7 +159,7 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
-
+```
 Save and exit (press Ctrl + O, then Enter, then Ctrl + X).
 
 
