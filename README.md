@@ -241,12 +241,12 @@ Limitation	Explanation
 
 ✅ In Summary
 
-Step	Command
-
-Update system	sudo apt update && sudo apt upgrade -y
-Install base tools	sudo apt install python3-pip git python3-opencv espeak -y
-Install libraries	pip3 install torch torchvision torchaudio ultralytics pyttsx3 --break-system-packages
-Run code	python3 detect_and_speak.py
+|Step|	Command|
+----------------
+||Update system|	sudo apt update && sudo apt upgrade -y
+|Install base tools|	sudo apt install python3-pip git python3-opencv |espeak -y
+|Install libraries|	pip3 install torch torchvision torchaudio |ultralytics pyttsx3 --break-system-packages
+|Run code|	python3 detect_and_speak.py
 
 
 
