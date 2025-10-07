@@ -178,15 +178,17 @@ Save and exit (press Ctrl + O, then Enter, then Ctrl + X).
 
 In terminal:
 
+```
 python3 detect_and_speak.py
+```
 
 ✅ You should now see:
 
-A window showing your camera feed
+- A window showing your camera feed
 
-Bounding boxes and labels over detected objects
+- Bounding boxes and labels over detected objects
 
-The system speaking aloud the object names (e.g. “I can see person, chair”)
+- The system speaking aloud the object names (e.g. “I can see person, chair”)
 
 
 Press Q to exit.
@@ -198,12 +200,15 @@ Press Q to exit.
 
 Later, when you move this to a Raspberry Pi, you can set it to run automatically using:
 
+```
 sudo nano /etc/rc.local
+```
 
 and add this line before exit 0:
 
+```
 python3 /home/pi/detect_and_speak.py &
-
+```
 
 ---
 
@@ -253,16 +258,14 @@ A camera window titled “Smart Glasses Camera View”
 
 Green boxes with labels like:
 
+```
 person
 bottle
 chair
+```
 
 Voice output saying:
 “I can see person and bottle.”
 
-
-
 ---
-
-Would you like me to also give you a second version of the same code optimized for Raspberry Pi 3B+/4 (smaller resolution, lower CPU load, but same functionality)? That way you can directly move this from your PC to the Pi later.
 
