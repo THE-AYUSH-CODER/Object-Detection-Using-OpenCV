@@ -214,27 +214,25 @@ python3 /home/pi/detect_and_speak.py &
 
 ⚙️ 🔟 Troubleshooting
 
-Problem	Fix
-
-No module named torch	Re-run pip3 install torch torchvision torchaudio --break-system-packages
-cv2.imshow crashes	Reduce window resolution or run sudo apt install python3-opencv again
-No audio	Check espeak works: run espeak "hello world"
-Laggy video	Use smaller model (yolov8n.pt) and close other apps
-
+| Problem               | Fix                                                                 |
+|-----------------------|---------------------------------------------------------------------|
+| ❌ No module named `torch`     | Re-run `pip3 install torch torchvision torchaudio --break-system-packages` |
+| 💥 `cv2.imshow` crashes        | Reduce window resolution or run `sudo apt install python3-opencv`  |
+| 🔇 No audio                    | Check if espeak works: run `espeak "hello world"`                     |
+| 🐢 Laggy video                 | Use smaller model (`yolov8n.pt`) and close other apps                 |
 
 
 ---
 
 🧠 1️⃣1️⃣ Notes & Drawbacks
 
-Limitation	Explanation
-
-🧮 CPU-only inference	YOLO runs slower (~3–5 FPS) without GPU
-🔊 Repetitive speech	Code limits repeats with last_spoken variable
-🧠 Limited accuracy	YOLOv8n detects 80 COCO objects (person, car, chair, etc.)
-🔋 High CPU use	Constant video + TTS can use ~60–80% CPU on PC
-⚡ Slow USB	Live USB storage can cause small lag
-
+| Limitation           | Explanation                                                                 |
+|----------------------|------------------------------------------------------------------------------|
+| 🧠 CPU-only inference | YOLO runs slower (~3–5 FPS) without GPU                                      |
+| 🔁 Repetitive speech  | Code limits repeats using the `last_speak` variable                          |
+| 🎯 Limited accuracy   | YOLOv8n detects only 80 COCO objects (e.g., person, car, chair)              |
+| 🔥 High CPU use       | Constant video + TTS can consume ~60–80% CPU on PC                           |
+| 🐌 Slow USB           | Live USB storage may introduce small lag                                     |
 
 
 ---
