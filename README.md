@@ -103,14 +103,14 @@ import cv2
 import pyttsx3
 from ultralytics import YOLO
 
-# Initialize YOLOv8 model
+ Initialize YOLOv8 model
 model = YOLO("yolov8n.pt")  # downloads automatically first run
 
-# Initialize text-to-speech engine
+ Initialize text-to-speech engine
 engine = pyttsx3.init()
 engine.setProperty('rate', 150)
 
-# Open webcam
+ Open webcam
 cap = cv2.VideoCapture(0)
 if not cap.isOpened():
     print("❌ Camera not detected!")
@@ -126,19 +126,19 @@ while True:
         print("❌ Failed to grab frame!")
         break
 
-    # Run YOLO detection
+     Run YOLO detection
     results = model(frame, verbose=False)
 
-    # Get class names of detected objects
+     Get class names of detected objects
     detected = []
     for box in results[0].boxes:
         cls_id = int(box.cls[0])
         detected.append(results[0].names[cls_id])
 
-    # Draw boxes and labels on frame
+     Draw boxes and labels on frame
     annotated_frame = results[0].plot()
 
-    # Speak detected objects if any
+     Speak detected objects if any
     if detected:
         # Remove duplicates
         detected = list(set(detected))
@@ -150,10 +150,10 @@ while True:
             engine.runAndWait()
             last_spoken = sentence
 
-    # Show the annotated frame
+     Show the annotated frame
     cv2.imshow("Smart Glasses Camera View", annotated_frame)
 
-    # Exit on pressing 'q'
+     Exit on pressing 'q'
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
